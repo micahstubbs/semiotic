@@ -1527,7 +1527,7 @@ class NetworkFrame extends React.Component<
     if (currentProps.nodeLabels && projectedNodes) {
       projectedNodes.forEach((node, nodei) => {
         const feasibleLabel =
-          nodeLabels && nodeLabels !== true && nodeLabels(node)
+          nodeLabels && nodeLabels !== true && nodeLabels(node, nodei)
 
         if (nodeLabels === true || feasibleLabel) {
           const actualLabel =
@@ -1794,7 +1794,7 @@ class NetworkFrame extends React.Component<
   }) => {
     const {
       tooltipContent,
-      optimizeCustomTooltipPosition, 
+      optimizeCustomTooltipPosition,
       size,
       useSpans
     } = this.props
